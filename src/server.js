@@ -25,6 +25,9 @@ connectDB();
 // Routes
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/users', require('./routes/users'));
+app.use('/api/matches', require('./routes/matches'));
+app.use('/api/messages', require('./routes/messages'));
+app.use('/api/notifications', require('./routes/notifications'));
 
 // Health check
 app.get('/api/health', (req, res) => {
