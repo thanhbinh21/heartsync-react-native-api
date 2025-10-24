@@ -8,14 +8,21 @@
     "dev": "nodemon src/server.js",
     "seed": "node src/scripts/seed.js"
   },
-  "keywords": ["dating", "api", "nodejs", "express"],
+  "keywords": [
+    "dating",
+    "api",
+    "nodejs",
+    "express"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^8.0.0",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
