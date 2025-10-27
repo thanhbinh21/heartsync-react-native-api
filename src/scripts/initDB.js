@@ -264,6 +264,240 @@ const sampleUsers = [
     },
     subscription: 'premium',
     verified: true
+  },
+  {
+    username: 'anhtuan',
+    password: '123456',
+    profile: {
+      name: 'Nguyễn Anh Tuấn',
+      age: 28,
+      photos: ['https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400'],
+      aboutMe: 'Developer thích coffee và code, đôi khi cũng thích người yêu.',
+      occupation: 'Full-stack Developer',
+      gender: 'Nam',
+      pronouns: 'Anh',
+      education: 'Đại học Bách Khoa TP.HCM',
+      location: { city: 'TP. Hồ Chí Minh', state: 'VN', zipCode: '700000' },
+      height: "1m75",
+      interests: ['Coding', 'Gaming', 'Netflix'],
+      languages: ['Tiếng Việt', 'Tiếng Anh']
+    },
+    preferences: {
+      gender: ['Nữ'],
+      ageRange: { min: 23, max: 30 },
+      distance: 50,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'premium',
+    verified: true
+  },
+  {
+    username: 'phuonganh',
+    password: '123456',
+    profile: {
+      name: 'Lê Phương Anh',
+      age: 25,
+      photos: ['https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400'],
+      aboutMe: 'Yêu thiên nhiên, thích đi phượt và sống chậm lại.',
+      occupation: 'Content Creator',
+      gender: 'Nữ',
+      pronouns: 'Chị',
+      education: 'Đại học Văn hóa Hà Nội',
+      location: { city: 'Hà Nội', state: 'VN', zipCode: '100000' },
+      height: "1m60",
+      interests: ['Photography', 'Travel', 'Vlogging'],
+      languages: ['Tiếng Việt', 'Tiếng Anh']
+    },
+    preferences: {
+      gender: ['Nam'],
+      ageRange: { min: 25, max: 33 },
+      distance: 100,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'free',
+    verified: true
+  },
+  {
+    username: 'ducminh',
+    password: '123456',
+    profile: {
+      name: 'Trần Đức Minh',
+      age: 30,
+      photos: ['https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400'],
+      aboutMe: 'Kiến trúc sư thích thiết kế và cái đẹp trong cuộc sống.',
+      occupation: 'Kiến trúc sư',
+      gender: 'Nam',
+      pronouns: 'Anh',
+      education: 'Đại học Kiến trúc TP.HCM',
+      location: { city: 'TP. Hồ Chí Minh', state: 'VN', zipCode: '700000' },
+      height: "1m79",
+      interests: ['Kiến trúc', 'Nghệ thuật', 'Du lịch'],
+      languages: ['Tiếng Việt', 'Tiếng Anh']
+    },
+    preferences: {
+      gender: ['Nữ'],
+      ageRange: { min: 25, max: 32 },
+      distance: 30,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'premium',
+    verified: true
+  },
+  {
+    username: 'mythao',
+    password: '123456',
+    profile: {
+      name: 'Võ Mỹ Thảo',
+      age: 22,
+      photos: ['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400'],
+      aboutMe: 'Sinh viên năm cuối, thích đọc sách và uống trà.',
+      occupation: 'Sinh viên Marketing',
+      gender: 'Nữ',
+      pronouns: 'Em',
+      education: 'Đại học Ngoại thương',
+      location: { city: 'Hà Nội', state: 'VN', zipCode: '100000' },
+      height: "1m64",
+      interests: ['Reading', 'Tea', 'Music'],
+      languages: ['Tiếng Việt', 'Tiếng Anh']
+    },
+    preferences: {
+      gender: ['Nam'],
+      ageRange: { min: 22, max: 28 },
+      distance: 40,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'free',
+    verified: true
+  },
+  {
+    username: 'duykhang',
+    password: '123456',
+    profile: {
+      name: 'Phan Duy Khang',
+      age: 26,
+      photos: ['https://images.unsplash.com/photo-1463453091185-61582044d556?w=400'],
+      aboutMe: 'Thể thao là niềm đam mê, yêu là dành cả trái tim.',
+      occupation: 'HLV Gym',
+      gender: 'Nam',
+      pronouns: 'Anh',
+      education: 'Đại học Thể dục Thể thao',
+      location: { city: 'Đà Nẵng', state: 'VN', zipCode: '550000' },
+      height: "1m82",
+      interests: ['Gym', 'Bơi lội', 'Yoga'],
+      languages: ['Tiếng Việt']
+    },
+    preferences: {
+      gender: ['Nữ'],
+      ageRange: { min: 21, max: 29 },
+      distance: 60,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'premium',
+    verified: true
+  },
+  {
+    username: 'huyentrang',
+    password: '123456',
+    profile: {
+      name: 'Đặng Huyền Trang',
+      age: 24,
+      photos: ['https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400'],
+      aboutMe: 'Nụ cười là vũ khí của em, yêu là chân thành.',
+      occupation: 'Giáo viên Tiếng Anh',
+      gender: 'Nữ',
+      pronouns: 'Cô',
+      education: 'Đại học Sư phạm Hà Nội',
+      location: { city: 'Hà Nội', state: 'VN', zipCode: '100000' },
+      height: "1m61",
+      interests: ['Teaching', 'Movies', 'Cafe'],
+      languages: ['Tiếng Việt', 'Tiếng Anh']
+    },
+    preferences: {
+      gender: ['Nam'],
+      ageRange: { min: 24, max: 31 },
+      distance: 50,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'free',
+    verified: true
+  },
+  {
+    username: 'vannam',
+    password: '123456',
+    profile: {
+      name: 'Lương Văn Nam',
+      age: 29,
+      photos: ['https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400'],
+      aboutMe: 'Bác sĩ trẻ đam mê công việc và yêu thương con người.',
+      occupation: 'Bác sĩ nội trú',
+      gender: 'Nam',
+      pronouns: 'Anh',
+      education: 'Đại học Y Hà Nội',
+      location: { city: 'Hà Nội', state: 'VN', zipCode: '100000' },
+      height: "1m74",
+      interests: ['Y học', 'Đọc sách', 'Chạy bộ'],
+      languages: ['Tiếng Việt', 'Tiếng Anh']
+    },
+    preferences: {
+      gender: ['Nữ'],
+      ageRange: { min: 24, max: 32 },
+      distance: 40,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'premium',
+    verified: true
+  },
+  {
+    username: 'baongoc',
+    password: '123456',
+    profile: {
+      name: 'Bùi Bảo Ngọc',
+      age: 23,
+      photos: ['https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400'],
+      aboutMe: 'Yêu động vật, thích âm nhạc acoustic và những ngày mưa.',
+      occupation: 'Nhân viên thú y',
+      gender: 'Nữ',
+      pronouns: 'Em',
+      education: 'Đại học Nông Lâm TP.HCM',
+      location: { city: 'TP. Hồ Chí Minh', state: 'VN', zipCode: '700000' },
+      height: "1m59",
+      interests: ['Animals', 'Music', 'Rain'],
+      languages: ['Tiếng Việt']
+    },
+    preferences: {
+      gender: ['Nam'],
+      ageRange: { min: 23, max: 29 },
+      distance: 35,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'free',
+    verified: true
+  },
+  {
+    username: 'quocanh',
+    password: '123456',
+    profile: {
+      name: 'Trịnh Quốc Anh',
+      age: 27,
+      photos: ['https://images.unsplash.com/photo-1507081323647-4d250478b919?w=400'],
+      aboutMe: 'Doanh nhân trẻ với khát vọng xây dựng startup công nghệ.',
+      occupation: 'CEO Startup',
+      gender: 'Nam',
+      pronouns: 'Anh',
+      education: 'Đại học Kinh tế Quốc dân',
+      location: { city: 'Hà Nội', state: 'VN', zipCode: '100000' },
+      height: "1m77",
+      interests: ['Business', 'Tech', 'Networking'],
+      languages: ['Tiếng Việt', 'Tiếng Anh']
+    },
+    preferences: {
+      gender: ['Nữ'],
+      ageRange: { min: 23, max: 30 },
+      distance: 70,
+      languages: ['Tiếng Việt']
+    },
+    subscription: 'premium',
+    verified: true
   }
 ];
 
