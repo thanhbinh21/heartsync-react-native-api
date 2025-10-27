@@ -498,7 +498,269 @@ const sampleUsers = [
     },
     subscription: 'premium',
     verified: true
-  }
+  },
+
+  {
+  username: 'hanhphuc',
+  password: '123456',
+  profile: {
+    name: 'Nguyễn Hạnh Phúc',
+    age: 22,
+    photos: ['https://images.unsplash.com/photo-1531256379416-9f000e90a54c?w=400'],
+    aboutMe: 'Cười nhiều để cuộc sống vui nhiều.',
+    occupation: 'Sinh viên Kế toán',
+    gender: 'Nữ',
+    pronouns: 'Em',
+    education: 'Đại học Tài chính - Marketing',
+    location: { city: 'TP. Hồ Chí Minh', state: 'VN', zipCode: '700000' },
+    height: "1m58",
+    interests: ['Cafe', 'Học nấu ăn', 'Xem phim'],
+    languages: ['Tiếng Việt']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 22, max: 28 },
+    distance: 30,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'free',
+  verified: true
+},
+{
+  username: 'thienkim',
+  password: '123456',
+  profile: {
+    name: 'Trần Thiên Kim',
+    age: 24,
+    photos: ['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400'],
+    aboutMe: 'Thích thời trang và du lịch biển.',
+    occupation: 'Nhân viên bán hàng',
+    gender: 'Nữ',
+    pronouns: 'Cô',
+    education: 'Cao đẳng Kinh tế',
+    location: { city: 'Đà Nẵng', state: 'VN', zipCode: '550000' },
+    height: "1m63",
+    interests: ['Shopping', 'Travel', 'Music'],
+    languages: ['Tiếng Việt']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 23, max: 30 },
+    distance: 80,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'premium',
+  verified: true
+},
+{
+  username: 'hoaianh',
+  password: '123456',
+  profile: {
+    name: 'Đào Hoài Anh',
+    age: 23,
+    photos: ['https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'],
+    aboutMe: 'Nội tâm nhưng sâu sắc.',
+    occupation: 'Designer Freelancer',
+    gender: 'Nữ',
+    pronouns: 'Cô',
+    education: 'Đại học Mỹ thuật Công nghiệp',
+    location: { city: 'Hà Nội', state: 'VN', zipCode: '100000' },
+    height: "1m61",
+    interests: ['Art', 'Photography', 'Music'],
+    languages: ['Tiếng Việt', 'Tiếng Anh']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 24, max: 30 },
+    distance: 100,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'free',
+  verified: true
+},
+{
+  username: 'hongnhung',
+  password: '123456',
+  profile: {
+    name: 'Phạm Hồng Nhung',
+    age: 21,
+    photos: ['https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400'],
+    aboutMe: 'Hay cười và dễ thương.',
+    occupation: 'Sinh viên Du lịch',
+    gender: 'Nữ',
+    pronouns: 'Em',
+    education: 'Đại học Văn Lang',
+    location: { city: 'TP. Hồ Chí Minh', state: 'VN', zipCode: '700000' },
+    height: "1m57",
+    interests: ['Travel', 'Makeup', 'TikTok'],
+    languages: ['Tiếng Việt']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 21, max: 27 },
+    distance: 25,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'free',
+  verified: false
+},
+{
+  username: 'yennhi',
+  password: '123456',
+  profile: {
+    name: 'Đinh Yên Nhi',
+    age: 22,
+    photos: ['https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400'],
+    aboutMe: 'Tính tình dễ thương, ai tốt với mình mình tốt lại gấp đôi.',
+    occupation: 'Nhân viên Spa',
+    gender: 'Nữ',
+    pronouns: 'Em',
+    education: 'Trung cấp thẩm mỹ',
+    location: { city: 'Hà Nội', state: 'VN', zipCode: '100000' },
+    height: "1m60",
+    interests: ['Skincare', 'Music', 'Yoga'],
+    languages: ['Tiếng Việt']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 22, max: 30 },
+    distance: 60,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'premium',
+  verified: true
+},
+{
+  username: 'thienan',
+  password: '123456',
+  profile: {
+    name: 'Nguyễn Thiên An',
+    age: 23,
+    photos: ['https://images.unsplash.com/photo-1544717305-2782549b5136?w=400'],
+    aboutMe: 'Cuộc đời là những chuyến đi.',
+    occupation: 'Hướng dẫn viên du lịch',
+    gender: 'Nữ',
+    pronouns: 'Cô',
+    education: 'Đại học Ngoại ngữ Đà Nẵng',
+    location: { city: 'Đà Nẵng', state: 'VN', zipCode: '550000' },
+    height: "1m62",
+    interests: ['Travel', 'Coffee', 'Movies'],
+    languages: ['Tiếng Việt', 'Tiếng Anh']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 23, max: 29 },
+    distance: 150,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'free',
+  verified: true
+},
+{
+  username: 'camtu',
+  password: '123456',
+  profile: {
+    name: 'Lê Cẩm Tú',
+    age: 25,
+    photos: ['https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400'],
+    aboutMe: 'Thích gym và cuộc sống lành mạnh.',
+    occupation: 'PT nữ',
+    gender: 'Nữ',
+    pronouns: 'Chị',
+    education: 'Đại học TDTT TP.HCM',
+    location: { city: 'TP. Hồ Chí Minh', state: 'VN', zipCode: '700000' },
+    height: "1m63",
+    interests: ['Gym', 'Healthy Food', 'Travel'],
+    languages: ['Tiếng Việt']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 25, max: 32 },
+    distance: 45,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'premium',
+  verified: true
+},
+{
+  username: 'thoan',
+  password: '123456',
+  profile: {
+    name: 'Tạ Tho An',
+    age: 20,
+    photos: ['https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400'],
+    aboutMe: 'Bé nhỏ nhưng không dễ bắt nạt.',
+    occupation: 'Sinh viên năm 2',
+    gender: 'Nữ',
+    pronouns: 'Em',
+    education: 'Đại học Mở TP.HCM',
+    location: { city: 'TP. Hồ Chí Minh', state: 'VN', zipCode: '700000' },
+    height: "1m55",
+    interests: ['Kpop', 'Dance', 'Netflix'],
+    languages: ['Tiếng Việt', 'Tiếng Hàn (basic)']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 20, max: 26 },
+    distance: 20,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'free',
+  verified: false
+},
+{
+  username: 'khanhvy',
+  password: '123456',
+  profile: {
+    name: 'Vũ Khánh Vy',
+    age: 24,
+    photos: ['https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400'],
+    aboutMe: 'Không hoàn hảo nhưng luôn thật lòng.',
+    occupation: 'Kế toán',
+    gender: 'Nữ',
+    pronouns: 'Cô',
+    education: 'Đại học Thương Mại',
+    location: { city: 'Hà Nội', state: 'VN', zipCode: '100000' },
+    height: "1m61",
+    interests: ['Music', 'Cafe', 'Gym'],
+    languages: ['Tiếng Việt']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 24, max: 32 },
+    distance: 30,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'free',
+  verified: true
+},
+{
+  username: 'ngocanh22',
+  password: '123456',
+  profile: {
+    name: 'Mai Ngọc Ánh',
+    age: 26,
+    photos: ['https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400'],
+    aboutMe: 'Ít nói nhưng yêu chân thành.',
+    occupation: 'Nhân viên HR',
+    gender: 'Nữ',
+    pronouns: 'Chị',
+    education: 'Đại học RMIT',
+    location: { city: 'TP. Hồ Chí Minh', state: 'VN', zipCode: '700000' },
+    height: "1m64",
+    interests: ['HR', 'Music', 'Travel'],
+    languages: ['Tiếng Việt', 'Tiếng Anh']
+  },
+  preferences: {
+    gender: ['Nam'],
+    ageRange: { min: 26, max: 34 },
+    distance: 30,
+    languages: ['Tiếng Việt']
+  },
+  subscription: 'premium',
+  verified: true
+}
+
 ];
 
 
@@ -541,4 +803,3 @@ async function initDatabase() {
 }
 
 initDatabase();
-
