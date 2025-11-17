@@ -4,6 +4,24 @@ const bcrypt = require('bcryptjs');
 
 const User = require('../models/User');
 
+// Pinterest photo URLs for user profiles
+const PHOTO_URLS = [
+  "https://i.pinimg.com/736x/fd/a0/0c/fda00c8a00cf2f0b7de05ce9b0f6f63d.jpg",
+  "https://i.pinimg.com/736x/14/9d/40/149d405dcf049c02e13fc420ee8fb9ce.jpg",
+  "https://i.pinimg.com/736x/78/b4/2a/78b42afd46b06a2566385cb95c7e4949.jpg",
+  "https://i.pinimg.com/736x/5d/df/1c/5ddf1c220894e95d2b87ec64c6db9ef1.jpg",
+  "https://i.pinimg.com/736x/6c/ce/00/6cce00fb2be2d708d21b8cb3815d5e77.jpg",
+  "https://i.pinimg.com/736x/63/a1/72/63a172849e272d600c6884352386a3dc.jpg",
+  "https://i.pinimg.com/736x/e8/59/1c/e8591cfd29e65bbccbf14deff6eab825.jpg",
+  "https://i.pinimg.com/736x/6f/01/54/6f0154f83e57d13d15c302fc250787f4.jpg",
+  "https://i.pinimg.com/736x/13/32/9e/13329e72f7b8e5b08ea7f167476b4b21.jpg",
+  "https://i.pinimg.com/736x/a9/bb/11/a9bb113e3b92da605001cdafaa607937.jpg",
+  "https://i.pinimg.com/736x/fc/58/1b/fc581ba1d1f8eb034fa9318f6dfa49cc.jpg"
+];
+
+// Get photo by index (cycling through array)
+const getPhotoByIndex = (index) => PHOTO_URLS[index % PHOTO_URLS.length];
+
 const sampleUsers = [
   {
     username: 'admin',
@@ -11,7 +29,7 @@ const sampleUsers = [
     profile: {
       name: 'Nguyễn Thành Bình',
       age: 22,
-      photos: ['https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400'],
+      photos: [getPhotoByIndex(0)],
       aboutMe: 'Một chàng trai vui tính, thích công nghệ và thích ăn phở.',
       occupation: 'Sinh viên CNTT',
       gender: 'Nam',
@@ -24,7 +42,7 @@ const sampleUsers = [
     },
     preferences: {
       gender: ['Nữ'],
-      ageRange: { min: 20, max: 26 },
+      ageRange: { min: 20, max: 30 },
       distance: 30,
       languages: ['Tiếng Việt']
     },
@@ -37,7 +55,7 @@ const sampleUsers = [
     profile: {
       name: 'Trần Minh Châu',
       age: 23,
-      photos: ['https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400'],
+      photos: [getPhotoByIndex(1)],
       aboutMe: 'Yêu mèo, thích du lịch và sống hết mình vì tuổi trẻ.',
       occupation: 'Nhân viên marketing',
       gender: 'Nữ',
@@ -63,7 +81,7 @@ const sampleUsers = [
     profile: {
       name: 'Lê Hoàng Vũ',
       age: 26,
-      photos: ['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400'],
+      photos: [getPhotoByIndex(2)],
       aboutMe: 'Thích thể thao và khám phá những điều mới mẻ.',
       occupation: 'Kỹ sư phần mềm',
       gender: 'Nam',
@@ -89,7 +107,7 @@ const sampleUsers = [
     profile: {
       name: 'Ngô Kim Anh',
       age: 24,
-      photos: ['https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400'],
+      photos: [getPhotoByIndex(3)],
       aboutMe: 'Dịu dàng nhưng đôi khi cũng rất cá tính.',
       occupation: 'Chuyên viên thiết kế đồ họa',
       gender: 'Nữ',
@@ -115,7 +133,7 @@ const sampleUsers = [
     profile: {
       name: 'Phạm Quang Thịnh',
       age: 29,
-      photos: ['https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400'],
+      photos: [getPhotoByIndex(4)],
       aboutMe: 'Chủ nghĩa xê dịch, đam mê phượt và trải nghiệm.',
       occupation: 'Nhiếp ảnh gia tự do',
       gender: 'Nam',
@@ -141,7 +159,7 @@ const sampleUsers = [
     profile: {
       name: 'Võ Thúy Dương',
       age: 21,
-      photos: ['https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400'],
+      photos: [getPhotoByIndex(5)],
       aboutMe: 'Bé vui vẻ, hay cười nhưng nghiêm túc khi yêu.',
       occupation: 'Sinh viên điều dưỡng',
       gender: 'Nữ',
@@ -167,7 +185,7 @@ const sampleUsers = [
     profile: {
       name: 'Đặng Thành Sơn',
       age: 27,
-      photos: ['https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400'],
+      photos: [getPhotoByIndex(6)],
       aboutMe: 'IT boy chính hiệu, biết sửa máy tính và sửa trái tim em.',
       occupation: 'Dev Backend',
       gender: 'Nam',
@@ -193,7 +211,7 @@ const sampleUsers = [
     profile: {
       name: 'Hoàng Ngọc Lan',
       age: 22,
-      photos: ['https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400'],
+      photos: [getPhotoByIndex(7)],
       aboutMe: 'Thích sự lạc quan và những người thông minh.',
       occupation: 'Nhân viên văn phòng',
       gender: 'Nữ',
@@ -219,7 +237,7 @@ const sampleUsers = [
     profile: {
       name: 'Trịnh Hữu Tài',
       age: 24,
-      photos: ['https://images.unsplash.com/photo-1500047890485-07f69c8cb13a?w=400'],
+      photos: [getPhotoByIndex(8)],
       aboutMe: 'Vui tính, thích là đi, không ngại xa.',
       occupation: 'Kỹ thuật cơ khí',
       gender: 'Nam',
@@ -245,7 +263,7 @@ const sampleUsers = [
     profile: {
       name: 'Đỗ Diễm Khanh',
       age: 23,
-      photos: ['https://images.unsplash.com/photo-1544717305-2782549b5136?w=400'],
+      photos: [getPhotoByIndex(9)],
       aboutMe: 'Tự lập và yêu cuộc sống là chính mình.',
       occupation: 'Chuyên viên tài chính',
       gender: 'Nữ',
@@ -271,7 +289,7 @@ const sampleUsers = [
     profile: {
       name: 'Nguyễn Anh Tuấn',
       age: 28,
-      photos: ['https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400'],
+      photos: [getPhotoByIndex(10)],
       aboutMe: 'Developer thích coffee và code, đôi khi cũng thích người yêu.',
       occupation: 'Full-stack Developer',
       gender: 'Nam',
@@ -297,7 +315,7 @@ const sampleUsers = [
     profile: {
       name: 'Lê Phương Anh',
       age: 25,
-      photos: ['https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400'],
+      photos: [getPhotoByIndex(0)],
       aboutMe: 'Yêu thiên nhiên, thích đi phượt và sống chậm lại.',
       occupation: 'Content Creator',
       gender: 'Nữ',
@@ -323,7 +341,7 @@ const sampleUsers = [
     profile: {
       name: 'Trần Đức Minh',
       age: 30,
-      photos: ['https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400'],
+      photos: [getPhotoByIndex(1)],
       aboutMe: 'Kiến trúc sư thích thiết kế và cái đẹp trong cuộc sống.',
       occupation: 'Kiến trúc sư',
       gender: 'Nam',
@@ -349,7 +367,7 @@ const sampleUsers = [
     profile: {
       name: 'Võ Mỹ Thảo',
       age: 22,
-      photos: ['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400'],
+      photos: [getPhotoByIndex(2)],
       aboutMe: 'Sinh viên năm cuối, thích đọc sách và uống trà.',
       occupation: 'Sinh viên Marketing',
       gender: 'Nữ',
@@ -375,7 +393,7 @@ const sampleUsers = [
     profile: {
       name: 'Phan Duy Khang',
       age: 26,
-      photos: ['https://images.unsplash.com/photo-1463453091185-61582044d556?w=400'],
+      photos: [getPhotoByIndex(3)],
       aboutMe: 'Thể thao là niềm đam mê, yêu là dành cả trái tim.',
       occupation: 'HLV Gym',
       gender: 'Nam',
@@ -401,7 +419,7 @@ const sampleUsers = [
     profile: {
       name: 'Đặng Huyền Trang',
       age: 24,
-      photos: ['https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400'],
+      photos: [getPhotoByIndex(4)],
       aboutMe: 'Nụ cười là vũ khí của em, yêu là chân thành.',
       occupation: 'Giáo viên Tiếng Anh',
       gender: 'Nữ',
@@ -427,7 +445,7 @@ const sampleUsers = [
     profile: {
       name: 'Lương Văn Nam',
       age: 29,
-      photos: ['https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400'],
+      photos: [getPhotoByIndex(5)],
       aboutMe: 'Bác sĩ trẻ đam mê công việc và yêu thương con người.',
       occupation: 'Bác sĩ nội trú',
       gender: 'Nam',
@@ -453,7 +471,7 @@ const sampleUsers = [
     profile: {
       name: 'Bùi Bảo Ngọc',
       age: 23,
-      photos: ['https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400'],
+      photos: [getPhotoByIndex(6)],
       aboutMe: 'Yêu động vật, thích âm nhạc acoustic và những ngày mưa.',
       occupation: 'Nhân viên thú y',
       gender: 'Nữ',
@@ -479,7 +497,7 @@ const sampleUsers = [
     profile: {
       name: 'Trịnh Quốc Anh',
       age: 27,
-      photos: ['https://images.unsplash.com/photo-1507081323647-4d250478b919?w=400'],
+      photos: [getPhotoByIndex(7)],
       aboutMe: 'Doanh nhân trẻ với khát vọng xây dựng startup công nghệ.',
       occupation: 'CEO Startup',
       gender: 'Nam',
@@ -506,7 +524,7 @@ const sampleUsers = [
   profile: {
     name: 'Nguyễn Hạnh Phúc',
     age: 22,
-    photos: ['https://images.unsplash.com/photo-1531256379416-9f000e90a54c?w=400'],
+    photos: [getPhotoByIndex(8)],
     aboutMe: 'Cười nhiều để cuộc sống vui nhiều.',
     occupation: 'Sinh viên Kế toán',
     gender: 'Nữ',
@@ -532,7 +550,7 @@ const sampleUsers = [
   profile: {
     name: 'Trần Thiên Kim',
     age: 24,
-    photos: ['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400'],
+    photos: [getPhotoByIndex(0)],
     aboutMe: 'Thích thời trang và du lịch biển.',
     occupation: 'Nhân viên bán hàng',
     gender: 'Nữ',
@@ -558,7 +576,7 @@ const sampleUsers = [
   profile: {
     name: 'Đào Hoài Anh',
     age: 23,
-    photos: ['https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'],
+    photos: [getPhotoByIndex(1)],
     aboutMe: 'Nội tâm nhưng sâu sắc.',
     occupation: 'Designer Freelancer',
     gender: 'Nữ',
@@ -584,7 +602,7 @@ const sampleUsers = [
   profile: {
     name: 'Phạm Hồng Nhung',
     age: 21,
-    photos: ['https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400'],
+    photos: [getPhotoByIndex(2)],
     aboutMe: 'Hay cười và dễ thương.',
     occupation: 'Sinh viên Du lịch',
     gender: 'Nữ',
@@ -610,7 +628,7 @@ const sampleUsers = [
   profile: {
     name: 'Đinh Yên Nhi',
     age: 22,
-    photos: ['https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400'],
+    photos: [getPhotoByIndex(3)],
     aboutMe: 'Tính tình dễ thương, ai tốt với mình mình tốt lại gấp đôi.',
     occupation: 'Nhân viên Spa',
     gender: 'Nữ',
@@ -636,7 +654,7 @@ const sampleUsers = [
   profile: {
     name: 'Nguyễn Thiên An',
     age: 23,
-    photos: ['https://images.unsplash.com/photo-1544717305-2782549b5136?w=400'],
+    photos: [getPhotoByIndex(4)],
     aboutMe: 'Cuộc đời là những chuyến đi.',
     occupation: 'Hướng dẫn viên du lịch',
     gender: 'Nữ',
@@ -662,7 +680,7 @@ const sampleUsers = [
   profile: {
     name: 'Lê Cẩm Tú',
     age: 25,
-    photos: ['https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400'],
+    photos: [getPhotoByIndex(5)],
     aboutMe: 'Thích gym và cuộc sống lành mạnh.',
     occupation: 'PT nữ',
     gender: 'Nữ',
@@ -688,7 +706,7 @@ const sampleUsers = [
   profile: {
     name: 'Tạ Tho An',
     age: 20,
-    photos: ['https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400'],
+    photos: [getPhotoByIndex(6)],
     aboutMe: 'Bé nhỏ nhưng không dễ bắt nạt.',
     occupation: 'Sinh viên năm 2',
     gender: 'Nữ',
@@ -714,7 +732,7 @@ const sampleUsers = [
   profile: {
     name: 'Vũ Khánh Vy',
     age: 24,
-    photos: ['https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400'],
+    photos: [getPhotoByIndex(7)],
     aboutMe: 'Không hoàn hảo nhưng luôn thật lòng.',
     occupation: 'Kế toán',
     gender: 'Nữ',
@@ -740,7 +758,7 @@ const sampleUsers = [
   profile: {
     name: 'Mai Ngọc Ánh',
     age: 26,
-    photos: ['https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400'],
+    photos: [getPhotoByIndex(8)],
     aboutMe: 'Ít nói nhưng yêu chân thành.',
     occupation: 'Nhân viên HR',
     gender: 'Nữ',
@@ -789,6 +807,9 @@ async function initDatabase() {
     }
 
     await User.insertMany(sampleUsers);
+    
+
+
     console.log(`✅ Inserted ${sampleUsers.length} sample users (hashed passwords)`);
 
     const userCount = await User.countDocuments();

@@ -1,9 +1,10 @@
 const express = require('express');
 const User = require('../models/User');
+const { getCache, setCache, deleteCache, cacheMiddleware } = require('../utils/cache');
 
 const router = express.Router();
 
-// Get user profile
+// Get user profile (with caching)
 router.get('/me/:userId', async (req, res) => {
   try {
     console.log('📱 Get profile for userId:', req.params.userId);
@@ -17,6 +18,20 @@ router.get('/me/:userId', async (req, res) => {
       });
     }
 
+    // Check cache first
+    const cacheKey = `user:profile:${req.params.userId}`;
+    const cachedUser = await getCache(cacheKey);
+    
+    if (cachedUser) {
+      console.log('✅ Cache HIT: User profile');
+      return res.json({
+        success: true,
+        user: cachedUser,
+        cached: true
+      });
+    }
+
+    console.log('❌ Cache MISS: Fetching from database');
     const user = await User.findById(req.params.userId);
     if (!user) {
       console.log('❌ User not found');
@@ -26,16 +41,21 @@ router.get('/me/:userId', async (req, res) => {
       });
     }
 
+    const userData = {
+      id: user._id,
+      username: user.username,
+      profile: user.profile,
+      preferences: user.preferences,
+      subscription: user.subscription,
+      verified: user.verified
+    };
+
+    // Cache for 5 minutes
+    await setCache(cacheKey, userData, 300);
+
     res.json({
       success: true,
-      user: {
-        id: user._id,
-        username: user.username,
-        profile: user.profile,
-        preferences: user.preferences,
-        subscription: user.subscription,
-        verified: user.verified
-      }
+      user: userData
     });
   } catch (error) {
     res.status(500).json({
@@ -109,16 +129,26 @@ router.put('/profile/:userId', async (req, res) => {
     await user.save();
     console.log('✅ Profile updated successfully');
 
+    // Clear user cache after update
+    const cacheKey = `user:profile:${req.params.userId}`;
+    await deleteCache(cacheKey);
+    console.log('🗑️ Cache cleared for user:', req.params.userId);
+
+    const userData = {
+      id: user._id,
+      username: user.username,
+      profile: user.profile,
+      preferences: user.preferences,
+      subscription: user.subscription,
+      verified: user.verified
+    };
+
+    // Re-cache updated data
+    await setCache(cacheKey, userData, 300);
+
     res.json({
       success: true,
-      user: {
-        id: user._id,
-        username: user.username,
-        profile: user.profile,
-        preferences: user.preferences,
-        subscription: user.subscription,
-        verified: user.verified
-      }
+      user: userData
     });
   } catch (error) {
     console.error('❌ Update profile error:', error);
